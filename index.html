@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Code Nay — Software a medida para barberías, spas, salones de belleza y gimnasios. Sistemas de reservas, paneles de admin y apps móviles.">
+<title>Code Nay — Software para tu negocio</title>
+
+<!-- Fuentes distintivas -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --bg-elev: #111113;
+    --ink: #f5f5f4;
+    --ink-dim: #a3a3a0;
+    --ink-faint: #525250;
+    --neon: #d4ff00;
+    --neon-soft: #b8e000;
+    --accent: #ff3b3b;
+    --line: rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+  }
+
+  /* Glow accent behind everything */
+  .glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,255,0,0.15), transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .glow-1 { top: -200px; right: -200px; }
+  .glow-2 { bottom: -200px; left: -200px; background: radial-gradient(circle, rgba(255,59,59,0.08), transparent 70%); }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(10,10,11,0.6);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--neon);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--neon);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+  .nav-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .nav-tag .status {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--neon);
+    margin-right: 6px;
+    box-shadow: 0 0 8px var(--neon);
+  }
+
+  /* ============ CONTAINER ============ */
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    position: relative;
+  }
+
+  .hero-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.1s forwards;
+  }
+  .hero-meta::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--neon);
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 9vw, 128px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--neon);
+    text-shadow: 0 0 40px rgba(212,255,0,0.3);
+  }
+  .hero h1 .strike {
+    position: relative;
+    font-weight: 700;
+  }
+  .hero h1 .strike::after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    right: -5%;
+    top: 50%;
+    height: 4px;
+    background: var(--accent);
+    transform: rotate(-2deg);
+    opacity: 0;
+    animation: strike 0.6s ease 1.2s forwards;
+  }
+  @keyframes strike {
+    to { opacity: 1; }
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: var(--ink-dim);
+    max-width: 600px;
+    margin-bottom: 48px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .btn-primary {
+    background: var(--neon);
+    color: var(--bg);
+    padding: 18px 32px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--neon-soft);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 40px rgba(212,255,0,0.5);
+    transform: translateY(-2px);
+  }
+  .btn-primary svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s;
+  }
+  .btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    padding: 18px 32px;
+    border: 1px solid var(--line-strong);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border-radius: 999px;
+  }
+  .btn-secondary:hover {
+    border-color: var(--neon);
+    color: var(--neon);
+  }
+
+  /* Ticker at bottom of hero */
+  .ticker {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-dim);
+    mask: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  }
+  .ticker-track {
+    display: flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: tick 40s linear infinite;
+  }
+  .ticker-track span {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .ticker-track span::after {
+    content: '◆';
+    color: var(--neon);
+    font-size: 8px;
+  }
+  @keyframes tick {
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section {
+    padding: 120px 0;
+    position: relative;
+  }
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--neon);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--neon);
+  }
+  .section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    max-width: 900px;
+  }
+  .section h2 em {
+    font-style: italic;
+    color: var(--neon);
+  }
+  .section-desc {
+    font-size: 18px;
+    color: var(--ink-dim);
+    max-width: 600px;
+    margin-bottom: 64px;
+  }
+
+  /* ============ WHO WE SERVE ============ */
+  .serve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .serve-card {
+    background: var(--bg-elev);
+    padding: 40px 32px;
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: default;
+  }
+  .serve-card:hover {
+    background: #18181a;
+  }
+  .serve-card:hover .serve-icon {
+    color: var(--neon);
+    transform: scale(1.1) rotate(-5deg);
+  }
+  .serve-icon {
+    font-size: 42px;
+    margin-bottom: 24px;
+    transition: all 0.4s ease;
+    display: inline-block;
+  }
+  .serve-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .serve-card p {
+    color: var(--ink-dim);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .serve-num {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+
+  /* ============ SERVICES (what we build) ============ */
+  .services {
+    display: grid;
+    gap: 16px;
+  }
+  .service-row {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+  }
+  .service-row:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  .service-row:hover {
+    padding-left: 24px;
+  }
+  .service-row:hover .service-arrow {
+    background: var(--neon);
+    color: var(--bg);
+    transform: rotate(-45deg) scale(1.1);
+  }
+  .service-row:hover h3 {
+    color: var(--neon);
+  }
+  .service-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+  }
+  .service-content h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3vw, 36px);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+  .service-content p {
+    color: var(--ink-dim);
+    font-size: 15px;
+    max-width: 500px;
+  }
+  .service-arrow {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+
+  /* ============ WHY US ============ */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .why-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 40px 32px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212,255,0,0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .why-card:hover {
+    border-color: var(--neon);
+    transform: translateY(-4px);
+  }
+  .why-card:hover::before {
+    opacity: 1;
+  }
+  .why-stat {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--neon);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .why-stat span {
+    font-size: 32px;
+    color: var(--ink-dim);
+    margin-left: 4px;
+  }
+  .why-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+  }
+  .why-card p {
+    color: var(--ink-dim);
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============ PROCESS ============ */
+  .process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    position: relative;
+  }
+  .process-step {
+    position: relative;
+  }
+  .process-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 88px;
+    color: var(--neon);
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.04em;
+    text-shadow: 0 0 40px rgba(212,255,0,0.3);
+  }
+  .process-step h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .process-step p {
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .process-step::after {
+    content: '→';
+    position: absolute;
+    right: -32px;
+    top: 30px;
+    color: var(--ink-faint);
+    font-size: 24px;
+  }
+  .process-step:last-child::after { display: none; }
+
+  /* ============ CTA ============ */
+  .cta-section {
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+  }
+  .cta-wrap {
+    background: linear-gradient(135deg, var(--bg-elev), var(--bg));
+    border: 1px solid var(--line-strong);
+    border-radius: 32px;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-wrap::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212,255,0,0.08), transparent 70%);
+    pointer-events: none;
+  }
+  .cta-wrap h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .cta-wrap h2 em {
+    font-style: italic;
+    color: var(--neon);
+  }
+  .cta-wrap p {
+    color: var(--ink-dim);
+    font-size: 18px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+  .cta-wrap .btn-primary {
+    position: relative;
+    font-size: 16px;
+    padding: 22px 40px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+  }
+  footer .logo {
+    font-size: 18px;
+  }
+  .footer-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .footer-social a {
+    color: var(--ink-dim);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+  }
+  .footer-social a:hover {
+    color: var(--neon);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-tag { display: none; }
+    .wrap { padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .hero { padding-top: 80px; }
+    .hero-cta { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-secondary { justify-content: center; }
+    .ticker { display: none; }
+    .service-row {
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+    }
+    .service-num { display: none; }
+    .service-row:hover { padding-left: 0; }
+    .process-step::after { display: none; }
+    .cta-wrap { padding: 60px 24px; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ LANGUAGE TOGGLE ============ */
+  .lang-toggle {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .lang-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-dim);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+  }
+  .lang-btn:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .lang-btn.active {
+    background: var(--neon);
+    color: var(--bg);
+    border-color: var(--neon);
+  }
+</style>
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <span class="logo-dot"></span>
+    Code Nay
+  </div>
+  <div style="display: flex; gap: 32px; align-items: center;">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="nav-tag">
+      <span class="status"></span><span data-i18n="nav.status">Aceptando proyectos</span> · 2026
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <div class="hero-meta" data-i18n="hero.meta">Software · Diseño · Automatización</div>
+  <h1 data-i18n="hero.title">
+    Tu negocio<br>
+    merece dejar de<br>
+    <span class="strike">operar por</span> <em>WhatsApp.</em>
+  </h1>
+  <p class="hero-sub" data-i18n="hero.subtitle">
+    Construimos software a medida para barberías, spas, salones de belleza y gimnasios. Reservas online, paneles de admin, TPV y todo lo que tu negocio necesita para crecer sin caos.
+  </p>
+  <div class="hero-cta">
+    <a href="https://instagram.com/code.nay_" target="_blank" rel="noopener" class="btn-primary">
+      <span data-i18n="hero.cta1">Iniciar proyecto</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="#services" class="btn-secondary" data-i18n="hero.cta2">
+      Ver lo que hacemos
+    </a>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span data-i18n="ticker.1">Sistemas de reservas</span>
+      <span data-i18n="ticker.2">Paneles de admin</span>
+      <span data-i18n="ticker.3">Apps móviles</span>
+      <span data-i18n="ticker.4">Puntos de venta</span>
+      <span data-i18n="ticker.5">Landing pages</span>
+      <span data-i18n="ticker.6">Automatizaciones</span>
+      <span data-i18n="ticker.7">Integraciones</span>
+      <span data-i18n="ticker.1">Sistemas de reservas</span>
+      <span data-i18n="ticker.2">Paneles de admin</span>
+      <span data-i18n="ticker.3">Apps móviles</span>
+      <span data-i18n="ticker.4">Puntos de venta</span>
+      <span data-i18n="ticker.5">Landing pages</span>
+      <span data-i18n="ticker.6">Automatizaciones</span>
+      <span data-i18n="ticker.7">Integraciones</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="section wrap reveal" id="who">
+  <div class="section-tag" data-i18n="sections.tag1">01 · Para quién</div>
+  <h2 data-i18n="serve.title">Negocios de <em>servicio</em> que quieren crecer sin perder el control de sus citas.</h2>
+  <p class="section-desc" data-i18n="serve.subtitle">Si tu negocio depende de agenda, clientes que reservan y equipos que cobran — esto es para ti.</p>
+
+  <div class="serve-grid">
+    <div class="serve-card">
+      <div class="serve-num">01</div>
+      <div class="serve-icon"></div>
+      <h3 data-i18n="serve.cards.0.title">Barberías</h3>
+      <p data-i18n="serve.cards.0.desc">Reservas por barbero, control de propinas, POS para productos y reportes por empleado.</p>
+    </div>
+    <div class="serve-card">
+      <div class="serve-num">02</div>
+      <div class="serve-icon"></div>
+      <h3 data-i18n="serve.cards.1.title">Spas</h3>
+      <p data-i18n="serve.cards.1.desc">Agenda de tratamientos, asignación de cabinas, paquetes, bonos regalo y membresías.</p>
+    </div>
+    <div class="serve-card">
+      <div class="serve-num">03</div>
+      <div class="serve-icon"></div>
+      <h3 data-i18n="serve.cards.2.title">Salones de belleza</h3>
+      <p data-i18n="serve.cards.2.desc">Reservas de múltiples servicios, comisiones por estilista y catálogo de productos.</p>
+    </div>
+    <div class="serve-card">
+      <div class="serve-num">04</div>
+      <div class="serve-icon"></div>
+      <h3 data-i18n="serve.cards.3.title">Gimnasios</h3>
+      <p data-i18n="serve.cards.3.desc">Membresías, clases grupales, cobros recurrentes y check-in con QR.</p>
+    </div>
+    <div class="serve-card">
+      <div class="serve-num">05</div>
+      <div class="serve-icon"></div>
+      <h3 data-i18n="serve.cards.4.title">Estéticas</h3>
+      <p data-i18n="serve.cards.4.desc">Historial de clientes, recordatorios automáticos y ventas de productos internos.</p>
+    </div>
+    <div class="serve-card">
+      <div class="serve-num">06</div>
+      <div class="serve-icon"></div>
+      <h3 data-i18n="serve.cards.5.title">Tu negocio</h3>
+      <p data-i18n="serve.cards.5.desc">¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section class="section wrap reveal" id="services">
+  <div class="section-tag" data-i18n="sections.tag2">02 · Qué construimos</div>
+  <h2 data-i18n="services.title">No vendemos software enlatado. <em>Construimos a medida.</em></h2>
+
+  <div class="services">
+    <div class="service-row">
+      <div class="service-num">/01</div>
+      <div class="service-content">
+        <h3 data-i18n="services.items.0.title">Sistemas de reservas online</h3>
+        <p data-i18n="services.items.0.desc">Tu cliente reserva en 10 segundos, sin descargar apps. Confirmación automática por email o WhatsApp.</p>
+      </div>
+      <div class="service-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">/02</div>
+      <div class="service-content">
+        <h3 data-i18n="services.items.1.title">Paneles de administración</h3>
+        <p data-i18n="services.items.1.desc">Controla citas, servicios, productos e ingresos desde cualquier dispositivo. Reportes claros, no hojas de cálculo infinitas.</p>
+      </div>
+      <div class="service-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">/03</div>
+      <div class="service-content">
+        <h3 data-i18n="services.items.2.title">Paneles para empleados</h3>
+        <p data-i18n="services.items.2.desc">Cada empleado ve su agenda, cobra desde su celular y lleva control de sus ganancias. Cero fricción.</p>
+      </div>
+      <div class="service-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">/04</div>
+      <div class="service-content">
+        <h3 data-i18n="services.items.3.title">Apps móviles tipo nativa</h3>
+        <p data-i18n="services.items.3.desc">Tu sistema se ve y funciona como app, sin el dolor de cabeza de la App Store. Se instala desde el navegador.</p>
+      </div>
+      <div class="service-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">/05</div>
+      <div class="service-content">
+        <h3 data-i18n="services.items.4.title">Landing pages que venden</h3>
+        <p data-i18n="services.items.4.desc">Una página simple que convierte visitantes en citas. Lista para tu Instagram, Google y anuncios.</p>
+      </div>
+      <div class="service-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-num">/06</div>
+      <div class="service-content">
+        <h3 data-i18n="services.items.5.title">Automatizaciones</h3>
+        <p data-i18n="services.items.5.desc">Recordatorios, facturación, mensajes de cumpleaños, reactivación de clientes inactivos. Todo en piloto automático.</p>
+      </div>
+      <div class="service-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section wrap reveal">
+  <div class="section-tag" data-i18n="sections.tag3">03 · Por qué nosotros</div>
+  <h2 data-i18n="why.title">Hecho para <em>dueños</em>, no para corporativos.</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-stat">0<span>%</span></div>
+      <h3 data-i18n="why.items.0.title">Comisiones por cita</h3>
+      <p data-i18n="why.items.0.desc">A diferencia de plataformas como Booksy, no te cobramos por cada reserva. Tarifa fija mensual, sin sorpresas.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-stat">24<span>/7</span></div>
+      <h3 data-i18n="why.items.1.title">Soporte directo</h3>
+      <p data-i18n="why.items.1.desc">Hablas con quien construyó tu sistema, no con un call center. Respuestas rápidas, arreglos rápidos.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-stat">100<span>%</span></div>
+      <h3 data-i18n="why.items.2.title">A tu medida</h3>
+      <p data-i18n="why.items.2.desc">Tu marca, tus colores, tus reglas de negocio. No te adaptas al software — el software se adapta a ti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section wrap reveal">
+  <div class="section-tag" data-i18n="sections.tag4">04 · Cómo trabajamos</div>
+  <h2 data-i18n="process.title">Tres pasos. <em>Sin misterios.</em></h2>
+
+  <div class="process">
+    <div class="process-step">
+      <div class="process-num">I.</div>
+      <h3 data-i18n="process.items.0.title">Llamada</h3>
+      <p data-i18n="process.items.0.desc">Nos cuentas tu negocio, tus dolores y lo que sueñas automatizar. Sin compromiso, sin venta agresiva.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">II.</div>
+      <h3 data-i18n="process.items.1.title">Propuesta</h3>
+      <p data-i18n="process.items.1.desc">Te mandamos una propuesta con alcance, tiempo y precio cerrado. Nada de letra pequeña.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">III.</div>
+      <h3 data-i18n="process.items.2.title">Entrega</h3>
+      <p data-i18n="process.items.2.desc">Construimos, te entrenamos y lanzamos. Después, seguimos contigo con mantenimiento y mejoras.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section wrap reveal">
+  <div class="cta-wrap">
+    <h2 data-i18n="cta.title">¿Listo para dejar de<br><em>pelearte</em> con tu agenda?</h2>
+    <p data-i18n="cta.subtitle">Escríbenos por Instagram. Te contestamos en menos de 24 horas con ideas concretas para tu negocio.</p>
+    <a href="https://instagram.com/code.nay_" target="_blank" rel="noopener" class="btn-primary">
+      <span data-i18n="cta.button">Escríbenos por Instagram</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">
+    <span class="logo-dot"></span>
+    Code Nay
+  </div>
+  <div class="footer-meta" data-i18n="footer.meta">© 2026 · Hecho con código y café</div>
+  <div class="footer-social">
+    <a href="https://instagram.com/code.nay_" target="_blank" rel="noopener" data-i18n="footer.instagram">Instagram ↗</a>
+  </div>
+</footer>
+
+<script src="translations.js"></script>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
