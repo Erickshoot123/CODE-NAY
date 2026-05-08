@@ -34,7 +34,8 @@ const translations = {
         { title: "Salones de belleza", desc: "Reservas de múltiples servicios, comisiones por estilista y catálogo de productos." },
         { title: "Gimnasios", desc: "Membresías, clases grupales, cobros recurrentes y check-in con QR." },
         { title: "Estéticas", desc: "Historial de clientes, recordatorios automáticos y ventas de productos internos." },
-        { title: "Tu negocio", desc: "¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos." }
+        { title: "Tu negocio", desc: "¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos." },
+      { title: "Cafés", desc: "Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes." }
       ]
     },
     services: {
@@ -109,7 +110,8 @@ const translations = {
         { title: "Beauty salons", desc: "Multi-service bookings, stylist commissions, and product catalog." },
         { title: "Gyms", desc: "Memberships, group classes, recurring billing, and QR check-in." },
         { title: "Aesthetics", desc: "Customer history, automatic reminders, and internal product sales." },
-        { title: "Your business", desc: "Don't fit anywhere? If there's scheduling and customers, we'll build it. Tell us." }
+        { title: "Your business", desc: "Don't fit anywhere? If there's scheduling and customers, we'll build it. Tell us." },
+      { title: "Cafés", desc: "Landing pages and websites for cafés, with menu, booking, and a look that hooks your customers." }
       ]
     },
     services: {
