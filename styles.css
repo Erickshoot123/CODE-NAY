@@ -171,8 +171,8 @@ nav {
 .hero h1 .strike::after {
   content: '';
   position: absolute;
-  left: -5%;
-  right: -5%;
+  left: 0;
+  right: 0;
   top: 50%;
   height: 4px;
   background: var(--accent);
