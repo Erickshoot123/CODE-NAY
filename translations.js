@@ -5,7 +5,7 @@ const translations = {
     },
     hero: {
       meta: "Software · Diseño · Automatización",
-      title: "Tu negocio<br>merece dejar de<br><span class=\"strike\">operar por</span> <em>WhatsApp.</em>",
+      title: "Tu negocio<br>merece dejar de<br><span>operar por</span> <em class=\"strike\">WhatsApp.</em>",
       subtitle: "Construimos software a medida para barberías, spas, salones de belleza y gimnasios. Reservas online, paneles de admin, TPV y todo lo que tu negocio necesita para crecer sin caos.",
       cta1: "Iniciar proyecto",
       cta2: "Ver lo que hacemos"
@@ -81,7 +81,7 @@ const translations = {
     },
     hero: {
       meta: "Software · Design · Automation",
-      title: "Your business<br>deserves to stop<br><span class=\"strike\">operating on</span> <em>WhatsApp.</em>",
+      title: "Your business<br>deserves to stop<br><span >operating on</span> <em class=\"strike\">WhatsApp.</em>",
       subtitle: "We build custom software for barbershops, spas, beauty salons, and gyms. Online booking, admin panels, POS, and everything your business needs to grow without chaos.",
       cta1: "Start a project",
       cta2: "See what we do"
@@ -111,7 +111,7 @@ const translations = {
         { title: "Gyms", desc: "Memberships, group classes, recurring billing, and QR check-in." },
         { title: "Aesthetics", desc: "Customer history, automatic reminders, and internal product sales." },
         { title: "Your business", desc: "Don't fit anywhere? If there's scheduling and customers, we'll build it. Tell us." },
-      { title: "Cafés", desc: "Landing pages and websites for cafés, with menu, booking, and a look that hooks your customers." }
+        { title: "Coffee shops", desc: "Landing pages and websites for coffee shops, with menu, booking, and a look that hooks your customers." }
       ]
     },
     services: {
