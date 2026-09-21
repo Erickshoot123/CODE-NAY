@@ -695,6 +695,16 @@ nav {
   transform: none;
   box-shadow: none;
 }
+.form-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+.form-note a {
+  color: var(--ink-dim);
+  text-decoration: underline;
+}
+.form-note a:hover { color: var(--neon); }
 .form-status {
   min-height: 24px;
   text-align: center;
@@ -732,6 +742,12 @@ footer .logo {
   color: var(--ink-faint);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+.footer-social {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .footer-social a {
   color: var(--ink-dim);

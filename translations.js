@@ -6,7 +6,7 @@ const translations = {
     hero: {
       meta: "Software · Diseño · Automatización",
       title: "Tu negocio<br>merece dejar de<br><span>hacerlo todo</span> <em class=\"strike\">a mano.</em>",
-      subtitle: "Construimos software a medida para negocios y empresas de todo tipo: tiendas, restaurantes, servicios, escuelas, clínicas y más. Reservas online, paneles de admin, punto de venta y todo lo que necesitas para crecer sin caos.",
+      subtitle: "Desde Tepic, Nayarit, construimos software a medida para negocios y empresas de todo tipo: tiendas, restaurantes, servicios, escuelas, clínicas y más. Reservas online, paneles de admin, punto de venta y todo lo que necesitas para crecer sin caos.",
       cta1: "Iniciar proyecto",
       cta2: "Ver lo que hacemos"
     },
@@ -90,13 +90,15 @@ const translations = {
       email: "Correo",
       business: "Tu negocio o empresa (opcional)",
       message: "¿Qué necesitas?",
+      privacy: "Al enviar, aceptas el <a href=\"privacidad.html\">aviso de privacidad</a>.",
       submit: "Enviar mensaje",
       sending: "Enviando…",
       ok: "¡Listo! Recibimos tu mensaje. Te respondemos en menos de 24 horas.",
       error: "No se pudo enviar. Inténtalo de nuevo o escríbenos a codenay8@gmail.com."
     },
     footer: {
-      meta: "© 2026 · Hecho con código y café",
+      meta: "© 2026 · Tepic, Nayarit · Hecho con código y café",
+      privacy: "Privacidad",
       instagram: "Instagram ↗"
     }
   },
@@ -108,7 +110,7 @@ const translations = {
     hero: {
       meta: "Software · Design · Automation",
       title: "Your business<br>deserves to stop<br><span>doing it all</span> <em class=\"strike\">by hand.</em>",
-      subtitle: "We build custom software for businesses and companies of every kind: stores, restaurants, services, schools, clinics, and more. Online booking, admin panels, point of sale, and everything you need to grow without chaos.",
+      subtitle: "From Tepic, Nayarit, we build custom software for businesses and companies of every kind: stores, restaurants, services, schools, clinics, and more. Online booking, admin panels, point of sale, and everything you need to grow without chaos.",
       cta1: "Start a project",
       cta2: "See what we do"
     },
@@ -192,13 +194,15 @@ const translations = {
       email: "Email",
       business: "Your business or company (optional)",
       message: "What do you need?",
+      privacy: "By sending, you accept the <a href=\"privacidad.html\">privacy notice</a>.",
       submit: "Send message",
       sending: "Sending…",
       ok: "Done! We got your message. We'll reply in less than 24 hours.",
       error: "Couldn't send it. Please try again or email us at codenay8@gmail.com."
     },
     footer: {
-      meta: "© 2026 · Made with code and coffee",
+      meta: "© 2026 · Tepic, Nayarit · Made with code and coffee",
+      privacy: "Privacy",
       instagram: "Instagram ↗"
     }
   }
