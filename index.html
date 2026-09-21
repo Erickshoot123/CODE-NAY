@@ -113,7 +113,7 @@
     Construimos software a medida para negocios y empresas de todo tipo: tiendas, restaurantes, servicios, escuelas, clínicas y más. Reservas online, paneles de admin, punto de venta y todo lo que necesitas para crecer sin caos.
   </p>
   <div class="hero-cta">
-    <a href="https://instagram.com/code.nay_" target="_blank" rel="noopener" class="btn-primary">
+    <a href="#contact" class="btn-primary">
       <span data-i18n="hero.cta1">Iniciar proyecto</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M5 12h14M13 5l7 7-7 7"/>
@@ -154,20 +154,20 @@
     <div class="serve-card">
       <div class="serve-num">01</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.0.title">Barberías</h3>
-      <p data-i18n="serve.cards.0.desc">Reservas por barbero, control de propinas, POS para productos y reportes por empleado.</p>
+      <h3 data-i18n="serve.cards.0.title">Barberías, spas y salones</h3>
+      <p data-i18n="serve.cards.0.desc">Reservas por profesional, comisiones, paquetes y membresías, POS para productos e historial de clientes.</p>
     </div>
     <div class="serve-card">
       <div class="serve-num">02</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.1.title">Spas</h3>
-      <p data-i18n="serve.cards.1.desc">Agenda de tratamientos, asignación de cabinas, paquetes, bonos regalo y membresías.</p>
+      <h3 data-i18n="serve.cards.1.title">Clínicas y consultorios</h3>
+      <p data-i18n="serve.cards.1.desc">Agenda de pacientes, recordatorios de cita, historial de cada paciente y cobros en un solo lugar.</p>
     </div>
     <div class="serve-card">
       <div class="serve-num">03</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.2.title">Salones y estéticas</h3>
-      <p data-i18n="serve.cards.2.desc">Reservas de múltiples servicios, comisiones por estilista, catálogo de productos e historial de clientes.</p>
+      <h3 data-i18n="serve.cards.2.title">Escuelas y academias</h3>
+      <p data-i18n="serve.cards.2.desc">Inscripciones, horarios de clases, control de asistencia, cobro de colegiaturas y avisos a padres y alumnos.</p>
     </div>
     <div class="serve-card">
       <div class="serve-num">04</div>
@@ -184,8 +184,8 @@
     <div class="serve-card">
       <div class="serve-num">06</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.6.title">Cafés</h3>
-      <p data-i18n="serve.cards.6.desc">Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes.</p>
+      <h3 data-i18n="serve.cards.6.title">Empresas</h3>
+      <p data-i18n="serve.cards.6.desc">Paneles internos, automatización de procesos, integraciones entre tus sistemas y reportes para equipos grandes.</p>
     </div>
     <div class="serve-card">
       <div class="serve-num">07</div>
@@ -338,7 +338,7 @@
       </div>
     </article>
 
-    <a class="work-card work-card--open" href="https://instagram.com/code.nay_" target="_blank" rel="noopener">
+    <a class="work-card work-card--open" href="#contact">
       <div class="work-open-mark">+</div>
       <h3 data-i18n="work.open.title">Este espacio está libre</h3>
       <p data-i18n="work.open.desc">Buscamos los siguientes proyectos para el portafolio. Si el tuyo va aquí, escríbenos y lo platicamos.</p>
@@ -396,18 +396,41 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section wrap reveal">
+<section class="cta-section wrap reveal" id="contact">
   <div class="cta-wrap">
     <h2 data-i18n="cta.title">¿Listo para dejar de<br><em>pelearte</em> con tu operación?</h2>
-    <p data-i18n="cta.subtitle">Escríbenos por Instagram. Te contestamos en menos de 24 horas con ideas concretas para tu negocio.</p>
-    <a href="https://instagram.com/code.nay_" target="_blank" rel="noopener" class="btn-primary">
-      <span data-i18n="cta.button">Escríbenos por Instagram</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <rect x="2" y="2" width="20" height="20" rx="5"/>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-      </svg>
-    </a>
+    <p data-i18n="cta.subtitle">Cuéntanos qué necesitas. Te contestamos en menos de 24 horas con ideas concretas para tu negocio.</p>
+    <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/codenay8@gmail.com" method="POST">
+      <div class="form-row">
+        <label class="field">
+          <span data-i18n="form.name">Nombre</span>
+          <input type="text" name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <label class="field">
+          <span data-i18n="form.email">Correo</span>
+          <input type="email" name="email" required maxlength="150" autocomplete="email">
+        </label>
+      </div>
+      <label class="field">
+        <span data-i18n="form.business">Tu negocio o empresa (opcional)</span>
+        <input type="text" name="business" maxlength="150" autocomplete="organization">
+      </label>
+      <label class="field">
+        <span data-i18n="form.message">¿Qué necesitas?</span>
+        <textarea name="message" rows="5" required maxlength="2000"></textarea>
+      </label>
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde codenay.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" class="btn-primary">
+        <span data-i18n="form.submit">Enviar mensaje</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <div class="form-status" role="status" aria-live="polite"></div>
+    </form>
   </div>
 </section>
 
@@ -435,6 +458,36 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const status = contactForm.querySelector('.form-status');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const t = translations[i18n.currentLang].form;
+      status.className = 'form-status';
+      status.textContent = t.sending;
+      submitBtn.disabled = true;
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === false || data.success === 'false') throw new Error('send failed');
+        contactForm.reset();
+        status.classList.add('is-ok');
+        status.textContent = t.ok;
+      } catch (err) {
+        status.classList.add('is-error');
+        status.textContent = t.error;
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  }
 </script>
 
 </body>

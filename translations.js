@@ -30,13 +30,13 @@ const translations = {
       title: "Para todo tipo de negocio. <em>Sin importar el giro.</em>",
       subtitle: "Estos son solo ejemplos de lo que podemos construir. Si tu negocio tiene clientes, ventas o procesos que hoy llevas a mano, esto es para ti.",
       cards: [
-        { title: "Barberías",          desc: "Reservas por barbero, control de propinas, POS para productos y reportes por empleado." },
-        { title: "Spas",               desc: "Agenda de tratamientos, asignación de cabinas, paquetes, bonos regalo y membresías." },
-        { title: "Salones y estéticas", desc: "Reservas de múltiples servicios, comisiones por estilista, catálogo de productos e historial de clientes." },
+        { title: "Barberías, spas y salones",          desc: "Reservas por profesional, comisiones, paquetes y membresías, POS para productos e historial de clientes." },
+        { title: "Clínicas y consultorios",               desc: "Agenda de pacientes, recordatorios de cita, historial de cada paciente y cobros en un solo lugar." },
+        { title: "Escuelas y academias", desc: "Inscripciones, horarios de clases, control de asistencia, cobro de colegiaturas y avisos a padres y alumnos." },
         { title: "Gimnasios",          desc: "Membresías, clases grupales, cobros recurrentes y check-in con QR." },
         { title: "Puntos de venta",    desc: "Tiendas, restaurantes y comercio en mostrador. Cobra, descuenta stock y cierra caja sin hardware caro." },
         { title: "Tu negocio o empresa",         desc: "¿Tu giro no está aquí? Da igual. Desde emprendedores hasta empresas con equipos grandes: si tienes clientes y procesos que hoy llevas a mano, lo construimos. Cuéntanos." },
-        { title: "Cafés",              desc: "Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes." },
+        { title: "Empresas",              desc: "Paneles internos, automatización de procesos, integraciones entre tus sistemas y reportes para equipos grandes." },
         { title: "Juegos y comunidades", desc: "Experiencias en Roblox, sistemas de juego, bots de Discord y herramientas para creadores con audiencia." }
       ]
     },
@@ -83,8 +83,17 @@ const translations = {
     },
     cta: {
       title: "¿Listo para dejar de<br><em>pelearte</em> con tu operación?",
-      subtitle: "Escríbenos por Instagram. Te contestamos en menos de 24 horas con ideas concretas para tu negocio.",
-      button: "Escríbenos por Instagram"
+      subtitle: "Cuéntanos qué necesitas. Te contestamos en menos de 24 horas con ideas concretas para tu negocio."
+    },
+    form: {
+      name: "Nombre",
+      email: "Correo",
+      business: "Tu negocio o empresa (opcional)",
+      message: "¿Qué necesitas?",
+      submit: "Enviar mensaje",
+      sending: "Enviando…",
+      ok: "¡Listo! Recibimos tu mensaje. Te respondemos en menos de 24 horas.",
+      error: "No se pudo enviar. Inténtalo de nuevo o escríbenos a codenay8@gmail.com."
     },
     footer: {
       meta: "© 2026 · Hecho con código y café",
@@ -123,13 +132,13 @@ const translations = {
       title: "For every kind of business. <em>Whatever your industry.</em>",
       subtitle: "These are just examples of what we can build. If your business has customers, sales, or processes you still handle by hand, this is for you.",
       cards: [
-        { title: "Barbershops",          desc: "Reservations by barber, tip tracking, POS for products, and employee reports." },
-        { title: "Spas",                 desc: "Treatment scheduling, cabin assignment, packages, gift certificates, and memberships." },
-        { title: "Salons & aesthetics",  desc: "Multi-service bookings, stylist commissions, product catalog, and customer history." },
+        { title: "Barbershops, spas & salons",          desc: "Bookings by professional, commissions, packages and memberships, POS for products, and customer history." },
+        { title: "Clinics & practices",                 desc: "Patient scheduling, appointment reminders, each patient's history, and billing in one place." },
+        { title: "Schools & academies",  desc: "Enrollment, class schedules, attendance tracking, tuition billing, and notices to parents and students." },
         { title: "Gyms",                 desc: "Memberships, group classes, recurring billing, and QR check-in." },
         { title: "Point of sale",        desc: "Stores, restaurants, and counter service. Charge, track stock, and close the till without expensive hardware." },
         { title: "Your business or company",        desc: "Your industry isn't here? No problem. From solo founders to companies with large teams: if you have customers and processes you still handle by hand, we'll build it. Tell us." },
-        { title: "Coffee shops",         desc: "Landing pages and websites for coffee shops, with menu, booking, and a look that hooks your customers." },
+        { title: "Companies",         desc: "Internal dashboards, process automation, integrations between your systems, and reports for larger teams." },
         { title: "Games & communities",  desc: "Roblox experiences, game systems, Discord bots, and tools for creators with an audience." }
       ]
     },
@@ -176,8 +185,17 @@ const translations = {
     },
     cta: {
       title: "Ready to stop<br><em>wrestling</em> with your operations?",
-      subtitle: "Message us on Instagram. We'll reply in less than 24 hours with concrete ideas for your business.",
-      button: "Message us on Instagram"
+      subtitle: "Tell us what you need. We'll reply in less than 24 hours with concrete ideas for your business."
+    },
+    form: {
+      name: "Name",
+      email: "Email",
+      business: "Your business or company (optional)",
+      message: "What do you need?",
+      submit: "Send message",
+      sending: "Sending…",
+      ok: "Done! We got your message. We'll reply in less than 24 hours.",
+      error: "Couldn't send it. Please try again or email us at codenay8@gmail.com."
     },
     footer: {
       meta: "© 2026 · Made with code and coffee",
