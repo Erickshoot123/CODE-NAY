@@ -5,8 +5,8 @@ const translations = {
     },
     hero: {
       meta: "Software · Diseño · Automatización",
-      title: "Tu negocio<br>merece dejar de<br><span>operar por</span> <em class=\"strike\">WhatsApp.</em>",
-      subtitle: "Construimos software a medida para todo tipo de negocio: tiendas, restaurantes, servicios, escuelas, clínicas y más. Reservas online, paneles de admin, punto de venta y todo lo que necesitas para crecer sin caos.",
+      title: "Tu negocio<br>merece dejar de<br><span>hacerlo todo</span> <em class=\"strike\">a mano.</em>",
+      subtitle: "Construimos software a medida para negocios y empresas de todo tipo: tiendas, restaurantes, servicios, escuelas, clínicas y más. Reservas online, paneles de admin, punto de venta y todo lo que necesitas para crecer sin caos.",
       cta1: "Iniciar proyecto",
       cta2: "Ver lo que hacemos"
     },
@@ -35,7 +35,7 @@ const translations = {
         { title: "Salones y estéticas", desc: "Reservas de múltiples servicios, comisiones por estilista, catálogo de productos e historial de clientes." },
         { title: "Gimnasios",          desc: "Membresías, clases grupales, cobros recurrentes y check-in con QR." },
         { title: "Puntos de venta",    desc: "Tiendas, restaurantes y comercio en mostrador. Cobra, descuenta stock y cierra caja sin hardware caro." },
-        { title: "Tu negocio",         desc: "¿Tu giro no está aquí? Da igual. Si tiene clientes y procesos que hoy llevas a mano, lo construimos. Cuéntanos." },
+        { title: "Tu negocio o empresa",         desc: "¿Tu giro no está aquí? Da igual. Desde emprendedores hasta empresas con equipos grandes: si tienes clientes y procesos que hoy llevas a mano, lo construimos. Cuéntanos." },
         { title: "Cafés",              desc: "Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes." },
         { title: "Juegos y comunidades", desc: "Experiencias en Roblox, sistemas de juego, bots de Discord y herramientas para creadores con audiencia." }
       ]
@@ -66,10 +66,10 @@ const translations = {
       }
     },
     why: {
-      title: "Hecho para <em>dueños</em>, no para corporativos.",
+      title: "Hecho para <em>ti</em>, sin importar el tamaño de tu negocio.",
       items: [
         { title: "Cero comisiones",  desc: "A diferencia de las plataformas que cobran por cada venta o reserva, aquí pagas una tarifa fija mensual, sin sorpresas." },
-        { title: "Soporte directo",      desc: "Hablas con quien construyó tu sistema, no con un call center. Respuestas rápidas, arreglos rápidos." },
+        { title: "Soporte directo",      desc: "Hablas directamente con quien construyó tu sistema. Respuestas rápidas, arreglos rápidos." },
         { title: "A tu medida",          desc: "Tu marca, tus colores, tus reglas de negocio. No te adaptas al software — el software se adapta a ti." }
       ]
     },
@@ -98,8 +98,8 @@ const translations = {
     },
     hero: {
       meta: "Software · Design · Automation",
-      title: "Your business<br>deserves to stop<br><span>operating on</span> <em class=\"strike\">WhatsApp.</em>",
-      subtitle: "We build custom software for every kind of business: stores, restaurants, services, schools, clinics, and more. Online booking, admin panels, point of sale, and everything you need to grow without chaos.",
+      title: "Your business<br>deserves to stop<br><span>doing it all</span> <em class=\"strike\">by hand.</em>",
+      subtitle: "We build custom software for businesses and companies of every kind: stores, restaurants, services, schools, clinics, and more. Online booking, admin panels, point of sale, and everything you need to grow without chaos.",
       cta1: "Start a project",
       cta2: "See what we do"
     },
@@ -128,7 +128,7 @@ const translations = {
         { title: "Salons & aesthetics",  desc: "Multi-service bookings, stylist commissions, product catalog, and customer history." },
         { title: "Gyms",                 desc: "Memberships, group classes, recurring billing, and QR check-in." },
         { title: "Point of sale",        desc: "Stores, restaurants, and counter service. Charge, track stock, and close the till without expensive hardware." },
-        { title: "Your business",        desc: "Your industry isn't here? No problem. If it has customers and processes you still handle by hand, we'll build it. Tell us." },
+        { title: "Your business or company",        desc: "Your industry isn't here? No problem. From solo founders to companies with large teams: if you have customers and processes you still handle by hand, we'll build it. Tell us." },
         { title: "Coffee shops",         desc: "Landing pages and websites for coffee shops, with menu, booking, and a look that hooks your customers." },
         { title: "Games & communities",  desc: "Roblox experiences, game systems, Discord bots, and tools for creators with an audience." }
       ]
@@ -159,10 +159,10 @@ const translations = {
       }
     },
     why: {
-      title: "Built for <em>owners</em>, not corporations.",
+      title: "Built for <em>you</em>, whatever the size of your business.",
       items: [
         { title: "No commissions",    desc: "Unlike platforms that charge you per sale or booking, you pay a fixed monthly rate, no surprises." },
-        { title: "24/7 direct support",    desc: "You talk to the person who built your system, not a call center. Fast responses, fast fixes." },
+        { title: "24/7 direct support",    desc: "You talk directly to the person who built your system. Fast responses, fast fixes." },
         { title: "100% custom",            desc: "Your brand, your colors, your business rules. You don't adapt to software — the software adapts to you." }
       ]
     },
