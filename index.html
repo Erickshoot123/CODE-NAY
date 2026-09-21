@@ -3,15 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Code Nay — Software a medida para barberías, spas, salones de belleza y gimnasios. Sistemas de reservas, paneles de admin y apps móviles.">
-<link rel="icon" href="favicon.png" type="image/png">
-<title>Code Nay — Software para tu negocio</title>
 
-<!-- Fuentes distintivas -->
+<!-- Título y descripción: lo que se ve en el resultado de Google -->
+<title>Code Nay — Software a medida en Tepic, Nayarit</title>
+<meta name="description" content="Desarrollo de software a medida en Tepic, Nayarit. Sistemas de reservas, puntos de venta, paneles de administración, sitios web y automatizaciones para negocios.">
+
+<!-- Dirección oficial de la página (evita contenido duplicado) -->
+<link rel="canonical" href="https://www.codenay.com/">
+
+<!-- Permiso explícito de indexación -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="icon" href="favicon.png" type="image/png">
+
+<!-- Vista previa al compartir por WhatsApp, Instagram, Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Code Nay">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://www.codenay.com/">
+<meta property="og:title" content="Code Nay — Software a medida en Tepic, Nayarit">
+<meta property="og:description" content="Sistemas de reservas, puntos de venta, paneles de administración, sitios web y automatizaciones. Construimos el software que tu negocio necesita.">
+<!-- TODO: cuando exista og-image.jpg (1200x630) en la raíz, agregar og:image, og:image:width/height/alt, twitter:image y "image" en el JSON-LD, y cambiar twitter:card a summary_large_image -->
+
+<!-- Vista previa en X / Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Code Nay — Software a medida en Tepic, Nayarit">
+<meta name="twitter:description" content="Sistemas de reservas, puntos de venta, paneles de administración, sitios web y automatizaciones.">
+
+<!-- Datos estructurados: le explican a Google qué es este negocio -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.codenay.com/#negocio",
+  "name": "Code Nay",
+  "alternateName": "Codenay",
+  "url": "https://www.codenay.com/",
+  "logo": "https://www.codenay.com/favicon.png",
+  "description": "Desarrollo de software a medida: sistemas de reservas, puntos de venta, paneles de administración, sitios web, apps y automatizaciones para negocios.",
+  "priceRange": "$$",
+  "areaServed": [
+    { "@type": "City",  "name": "Tepic" },
+    { "@type": "State", "name": "Nayarit" },
+    { "@type": "Country", "name": "México" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tepic",
+    "addressRegion": "Nayarit",
+    "addressCountry": "MX"
+  },
+  "sameAs": [
+    "https://instagram.com/code.nay_"
+  ],
+  "knowsLanguage": ["es-MX", "en"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de desarrollo de software",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas de reservas y agenda en línea" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Puntos de venta e inventario" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paneles de administración" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de sitios web y landing pages" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones web y móviles" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatizaciones e integraciones" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de juegos en Roblox" } }
+    ]
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles-work.css">
 </head>
 <body>
 
@@ -41,7 +107,7 @@
   <h1 data-i18n="hero.title">
     Tu negocio<br>
     merece dejar de<br>
-    <span class="strike">WhatsApp</span> <em>operar por</em>
+    <span>operar por</span> <em class="strike">WhatsApp.</em>
   </h1>
   <p class="hero-sub" data-i18n="hero.subtitle">
     Construimos software a medida para barberías, spas, salones de belleza y gimnasios. Reservas online, paneles de admin, TPV y todo lo que tu negocio necesita para crecer sin caos.
@@ -100,8 +166,8 @@
     <div class="serve-card">
       <div class="serve-num">03</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.2.title">Salones de belleza</h3>
-      <p data-i18n="serve.cards.2.desc">Reservas de múltiples servicios, comisiones por estilista y catálogo de productos.</p>
+      <h3 data-i18n="serve.cards.2.title">Salones y estéticas</h3>
+      <p data-i18n="serve.cards.2.desc">Reservas de múltiples servicios, comisiones por estilista, catálogo de productos e historial de clientes.</p>
     </div>
     <div class="serve-card">
       <div class="serve-num">04</div>
@@ -112,20 +178,30 @@
     <div class="serve-card">
       <div class="serve-num">05</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.4.title">Estéticas</h3>
-      <p data-i18n="serve.cards.4.desc">Historial de clientes, recordatorios automáticos y ventas de productos internos.</p>
+      <h3 data-i18n="serve.cards.4.title">Puntos de venta</h3>
+      <p data-i18n="serve.cards.4.desc">Tiendas, restaurantes y comercio en mostrador. Cobra, descuenta stock y cierra caja sin hardware caro.</p>
     </div>
     <div class="serve-card">
       <div class="serve-num">06</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.5.title">Tu negocio</h3>
-      <p data-i18n="serve.cards.5.desc">¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos.</p>
+      <h3 data-i18n="serve.cards.6.title">Cafés</h3>
+      <p data-i18n="serve.cards.6.desc">Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes.</p>
     </div>
     <div class="serve-card">
       <div class="serve-num">07</div>
       <div class="serve-icon"></div>
-      <h3 data-i18n="serve.cards.6.title">Cafés</h3>
-      <p data-i18n="serve.cards.6.desc">Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes.</p>
+      <h3 data-i18n="serve.cards.7.title">Juegos y comunidades</h3>
+      <p data-i18n="serve.cards.7.desc">Experiencias en Roblox, sistemas de juego, bots de Discord y herramientas para creadores con audiencia.</p>
+    </div>
+    <div class="serve-card">
+      <div class="serve-num">08</div>
+      <div class="serve-icon"></div>
+      <h3 data-i18n="serve.cards.5.title">Tu negocio</h3>
+      <p data-i18n="serve.cards.5.desc">¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos.</p>
+    </div>
+    <div class="serve-card serve-card--empty">
+      <div class="serve-num">09</div>
+      <div class="serve-icon"></div>
     </div>
   </div>
 </section>
@@ -204,9 +280,76 @@
   </div>
 </section>
 
+<!-- WORK / PROYECTOS -->
+<section class="section wrap reveal" id="work">
+  <div class="section-tag" data-i18n="sections.tag3">03 · Proyectos</div>
+  <h2 data-i18n="work.title">Lo que estamos <em>construyendo</em>.</h2>
+  <p class="section-desc" data-i18n="work.subtitle">Code Nay está arrancando y lo decimos sin adornos. Estos son los proyectos en curso y los lugares que siguen abiertos.</p>
+
+  <div class="work-grid">
+    <article class="work-card">
+      <div class="work-thumb" data-thumb="01">
+        <span class="work-thumb-label" data-i18n="work.items.0.kind">Sistema de reservas</span>
+      </div>
+      <div class="work-body">
+        <div class="work-meta">
+          <span class="work-client" data-i18n="work.items.0.client">Proyecto piloto</span>
+          <span class="work-status is-live" data-i18n="work.items.0.status">En línea</span>
+        </div>
+        <h3 data-i18n="work.items.0.title">Agenda para barbería</h3>
+        <p data-i18n="work.items.0.desc">Reservas por barbero, recordatorios automáticos y panel con ingresos del día.</p>
+        <div class="work-tags">
+          <span>Web</span><span>Reservas</span><span>Panel</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="work-card">
+      <div class="work-thumb" data-thumb="02">
+        <span class="work-thumb-label" data-i18n="work.items.1.kind">Punto de venta</span>
+      </div>
+      <div class="work-body">
+        <div class="work-meta">
+          <span class="work-client" data-i18n="work.items.1.client">Proyecto piloto</span>
+          <span class="work-status is-building" data-i18n="work.items.1.status">En construcción</span>
+        </div>
+        <h3 data-i18n="work.items.1.title">POS para cafetería</h3>
+        <p data-i18n="work.items.1.desc">Cobro rápido, control de inventario y corte de caja al cierre del turno.</p>
+        <div class="work-tags">
+          <span>POS</span><span>Inventario</span><span>Reportes</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="work-card">
+      <div class="work-thumb" data-thumb="03">
+        <span class="work-thumb-label" data-i18n="work.items.2.kind">Roblox</span>
+      </div>
+      <div class="work-body">
+        <div class="work-meta">
+          <span class="work-client" data-i18n="work.items.2.client">Proyecto interno</span>
+          <span class="work-status is-building" data-i18n="work.items.2.status">En construcción</span>
+        </div>
+        <h3 data-i18n="work.items.2.title">Experiencia en Roblox</h3>
+        <p data-i18n="work.items.2.desc">Sistema de progresión, economía interna y guardado de partida para jugadores.</p>
+        <div class="work-tags">
+          <span>Luau</span><span>Juego</span><span>Economía</span>
+        </div>
+      </div>
+    </article>
+
+    <a class="work-card work-card--open" href="https://instagram.com/code.nay_" target="_blank" rel="noopener">
+      <div class="work-open-mark">+</div>
+      <h3 data-i18n="work.open.title">Este espacio está libre</h3>
+      <p data-i18n="work.open.desc">Buscamos los siguientes proyectos para el portafolio. Si el tuyo va aquí, escríbenos y lo platicamos.</p>
+      <span class="work-open-cta" data-i18n="work.open.cta">Proponer mi proyecto ↗</span>
+    </a>
+  </div>
+</section>
+
 <!-- WHY US -->
 <section class="section wrap reveal">
-  <div class="section-tag" data-i18n="sections.tag3">03 · Por qué nosotros</div>
+  <div class="section-tag" data-i18n="sections.tag4">04 · Por qué nosotros</div>
   <h2 data-i18n="why.title">Hecho para <em>dueños</em>, no para corporativos.</h2>
 
   <div class="why-grid">
@@ -230,7 +373,7 @@
 
 <!-- PROCESS -->
 <section class="section wrap reveal">
-  <div class="section-tag" data-i18n="sections.tag4">04 · Cómo trabajamos</div>
+  <div class="section-tag" data-i18n="sections.tag5">05 · Cómo trabajamos</div>
   <h2 data-i18n="process.title">Tres pasos. <em>Sin misterios.</em></h2>
 
   <div class="process">
@@ -247,7 +390,7 @@
     <div class="process-step">
       <div class="process-num">III.</div>
       <h3 data-i18n="process.items.2.title">Entrega</h3>
-      <p data-i18n="process.items.2.desc">Construimos, te entrenamos y lanzamos. Después, seguimos contigo con mantenimiento y mejoras.</p>
+      <p data-i18n="process.items.2.desc">Construimos, te entrenamos y lanzamos. Después seguimos contigo con mantenimiento y mejoras.</p>
     </div>
   </div>
 </section>
@@ -283,7 +426,6 @@
 <script src="translations.js"></script>
 
 <script>
-  // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

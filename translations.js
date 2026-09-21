@@ -22,20 +22,22 @@ const translations = {
     sections: {
       tag1: "01 · Para quién",
       tag2: "02 · Qué construimos",
-      tag3: "03 · Por qué nosotros",
-      tag4: "04 · Cómo trabajamos"
+      tag3: "03 · Proyectos",
+      tag4: "04 · Por qué nosotros",
+      tag5: "05 · Cómo trabajamos"
     },
     serve: {
       title: "Negocios de <em>servicio</em> que quieren crecer sin perder el control de sus citas.",
       subtitle: "Si tu negocio depende de agenda, clientes que reservan y equipos que cobran — esto es para ti.",
       cards: [
-        { title: "Barberías", desc: "Reservas por barbero, control de propinas, POS para productos y reportes por empleado." },
-        { title: "Spas", desc: "Agenda de tratamientos, asignación de cabinas, paquetes, bonos regalo y membresías." },
-        { title: "Salones de belleza", desc: "Reservas de múltiples servicios, comisiones por estilista y catálogo de productos." },
-        { title: "Gimnasios", desc: "Membresías, clases grupales, cobros recurrentes y check-in con QR." },
-        { title: "Estéticas", desc: "Historial de clientes, recordatorios automáticos y ventas de productos internos." },
-        { title: "Tu negocio", desc: "¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos." },
-      { title: "Cafés", desc: "Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes." }
+        { title: "Barberías",          desc: "Reservas por barbero, control de propinas, POS para productos y reportes por empleado." },
+        { title: "Spas",               desc: "Agenda de tratamientos, asignación de cabinas, paquetes, bonos regalo y membresías." },
+        { title: "Salones y estéticas", desc: "Reservas de múltiples servicios, comisiones por estilista, catálogo de productos e historial de clientes." },
+        { title: "Gimnasios",          desc: "Membresías, clases grupales, cobros recurrentes y check-in con QR." },
+        { title: "Puntos de venta",    desc: "Tiendas, restaurantes y comercio en mostrador. Cobra, descuenta stock y cierra caja sin hardware caro." },
+        { title: "Tu negocio",         desc: "¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos." },
+        { title: "Cafés",              desc: "Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes." },
+        { title: "Juegos y comunidades", desc: "Experiencias en Roblox, sistemas de juego, bots de Discord y herramientas para creadores con audiencia." }
       ]
     },
     services: {
@@ -49,20 +51,34 @@ const translations = {
         { title: "Automatizaciones", desc: "Recordatorios, facturación, mensajes de cumpleaños, reactivación de clientes inactivos. Todo en piloto automático." }
       ]
     },
+    work: {
+      title: "Lo que estamos <em>construyendo</em>.",
+      subtitle: "Code Nay está arrancando y lo decimos sin adornos. Estos son los proyectos en curso y los lugares que siguen abiertos.",
+      items: [
+        { kind: "Sistema de reservas", client: "Proyecto piloto", status: "En línea",       title: "Agenda para barbería", desc: "Reservas por barbero, recordatorios automáticos y panel con ingresos del día." },
+        { kind: "Punto de venta",      client: "Proyecto piloto", status: "En construcción", title: "POS para cafetería",   desc: "Cobro rápido, control de inventario y corte de caja al cierre del turno." },
+        { kind: "Roblox",              client: "Proyecto interno", status: "En construcción", title: "Experiencia en Roblox", desc: "Sistema de progresión, economía interna y guardado de partida para jugadores." }
+      ],
+      open: {
+        title: "Este espacio está libre",
+        desc: "Buscamos los siguientes proyectos para el portafolio. Si el tuyo va aquí, escríbenos y lo platicamos.",
+        cta: "Proponer mi proyecto ↗"
+      }
+    },
     why: {
       title: "Hecho para <em>dueños</em>, no para corporativos.",
       items: [
-        { title: "Comisiones por cita", desc: "A diferencia de plataformas como Booksy, no te cobramos por cada reserva. Tarifa fija mensual, sin sorpresas." },
-        { title: "Soporte directo", desc: "Hablas con quien construyó tu sistema, no con un call center. Respuestas rápidas, arreglos rápidos." },
-        { title: "A tu medida", desc: "Tu marca, tus colores, tus reglas de negocio. No te adaptas al software — el software se adapta a ti." }
+        { title: "Comisiones por cita",  desc: "A diferencia de plataformas como Booksy, no te cobramos por cada reserva. Tarifa fija mensual, sin sorpresas." },
+        { title: "Soporte directo",      desc: "Hablas con quien construyó tu sistema, no con un call center. Respuestas rápidas, arreglos rápidos." },
+        { title: "A tu medida",          desc: "Tu marca, tus colores, tus reglas de negocio. No te adaptas al software — el software se adapta a ti." }
       ]
     },
     process: {
       title: "Tres pasos. <em>Sin misterios.</em>",
       items: [
-        { title: "Llamada", desc: "Nos cuentas tu negocio, tus dolores y lo que sueñas automatizar. Sin compromiso, sin venta agresiva." },
+        { title: "Llamada",   desc: "Nos cuentas tu negocio, tus dolores y lo que sueñas automatizar. Sin compromiso, sin venta agresiva." },
         { title: "Propuesta", desc: "Te mandamos una propuesta con alcance, tiempo y precio cerrado. Nada de letra pequeña." },
-        { title: "Entrega", desc: "Construimos, te entrenamos y lanzamos. Después, seguimos contigo con mantenimiento y mejoras." }
+        { title: "Entrega",   desc: "Construimos, te entrenamos y lanzamos. Después, seguimos contigo con mantenimiento y mejoras." }
       ]
     },
     cta: {
@@ -75,13 +91,14 @@ const translations = {
       instagram: "Instagram ↗"
     }
   },
+
   en: {
     nav: {
       status: "Now accepting projects"
     },
     hero: {
       meta: "Software · Design · Automation",
-      title: "Your business<br>deserves to stop<br><span >operating on</span> <em class=\"strike\">WhatsApp.</em>",
+      title: "Your business<br>deserves to stop<br><span>operating on</span> <em class=\"strike\">WhatsApp.</em>",
       subtitle: "We build custom software for barbershops, spas, beauty salons, and gyms. Online booking, admin panels, POS, and everything your business needs to grow without chaos.",
       cta1: "Start a project",
       cta2: "See what we do"
@@ -98,47 +115,63 @@ const translations = {
     sections: {
       tag1: "01 · Who we serve",
       tag2: "02 · What we build",
-      tag3: "03 · Why us",
-      tag4: "04 · How we work"
+      tag3: "03 · Projects",
+      tag4: "04 · Why us",
+      tag5: "05 · How we work"
     },
     serve: {
       title: "<em>Service</em> businesses that want to grow without losing control of their appointments.",
       subtitle: "If your business depends on scheduling, customers booking, and teams getting paid — this is for you.",
       cards: [
-        { title: "Barbershops", desc: "Reservations by barber, tip tracking, POS for products, and employee reports." },
-        { title: "Spas", desc: "Treatment scheduling, cabin assignment, packages, gift certificates, and memberships." },
-        { title: "Beauty salons", desc: "Multi-service bookings, stylist commissions, and product catalog." },
-        { title: "Gyms", desc: "Memberships, group classes, recurring billing, and QR check-in." },
-        { title: "Aesthetics", desc: "Customer history, automatic reminders, and internal product sales." },
-        { title: "Your business", desc: "Don't fit anywhere? If there's scheduling and customers, we'll build it. Tell us." },
-        { title: "Coffee shops", desc: "Landing pages and websites for coffee shops, with menu, booking, and a look that hooks your customers." }
+        { title: "Barbershops",          desc: "Reservations by barber, tip tracking, POS for products, and employee reports." },
+        { title: "Spas",                 desc: "Treatment scheduling, cabin assignment, packages, gift certificates, and memberships." },
+        { title: "Salons & aesthetics",  desc: "Multi-service bookings, stylist commissions, product catalog, and customer history." },
+        { title: "Gyms",                 desc: "Memberships, group classes, recurring billing, and QR check-in." },
+        { title: "Point of sale",        desc: "Stores, restaurants, and counter service. Charge, track stock, and close the till without expensive hardware." },
+        { title: "Your business",        desc: "Don't fit anywhere? If there's scheduling and customers, we'll build it. Tell us." },
+        { title: "Coffee shops",         desc: "Landing pages and websites for coffee shops, with menu, booking, and a look that hooks your customers." },
+        { title: "Games & communities",  desc: "Roblox experiences, game systems, Discord bots, and tools for creators with an audience." }
       ]
     },
     services: {
       title: "We don't sell off-the-shelf software. <em>We build custom.</em>",
       items: [
-        { title: "Online booking systems", desc: "Your customer books in 10 seconds, no app download needed. Automatic confirmation via email or WhatsApp." },
-        { title: "Admin panels", desc: "Control appointments, services, products, and revenue from any device. Clear reports, not endless spreadsheets." },
-        { title: "Employee panels", desc: "Each employee sees their schedule, collects payment from their phone, and tracks their earnings. Zero friction." },
-        { title: "Native-like mobile apps", desc: "Your system looks and works like an app, without the App Store headache. Installs from the browser." },
-        { title: "Landing pages that sell", desc: "A simple page that turns visitors into bookings. Ready for your Instagram, Google, and ads." },
-        { title: "Automations", desc: "Reminders, invoicing, birthday messages, reactivating inactive customers. All on autopilot." }
+        { title: "Online booking systems",    desc: "Your customer books in 10 seconds, no app download needed. Automatic confirmation via email or WhatsApp." },
+        { title: "Admin panels",              desc: "Control appointments, services, products, and revenue from any device. Clear reports, not endless spreadsheets." },
+        { title: "Employee panels",           desc: "Each employee sees their schedule, collects payment from their phone, and tracks their earnings. Zero friction." },
+        { title: "Native-like mobile apps",   desc: "Your system looks and works like an app, without the App Store headache. Installs from the browser." },
+        { title: "Landing pages that sell",   desc: "A simple page that turns visitors into bookings. Ready for your Instagram, Google, and ads." },
+        { title: "Automations",               desc: "Reminders, invoicing, birthday messages, reactivating inactive customers. All on autopilot." }
       ]
+    },
+    work: {
+      title: "What we're <em>building</em>.",
+      subtitle: "Code Nay is just starting out — and we say that without decoration. These are the projects in progress and the spots still open.",
+      items: [
+        { kind: "Booking system",  client: "Pilot project",    status: "Live",        title: "Barber shop scheduler", desc: "Bookings by barber, automatic reminders, and a daily revenue panel." },
+        { kind: "Point of sale",   client: "Pilot project",    status: "In progress", title: "POS for café",          desc: "Fast checkout, inventory control, and end-of-shift reconciliation." },
+        { kind: "Roblox",          client: "Internal project", status: "In progress", title: "Roblox experience",     desc: "Progression system, internal economy, and save data for players." }
+      ],
+      open: {
+        title: "This spot is open",
+        desc: "We're looking for the next projects for our portfolio. If yours belongs here, write us and let's talk.",
+        cta: "Pitch my project ↗"
+      }
     },
     why: {
       title: "Built for <em>owners</em>, not corporations.",
       items: [
-        { title: "No per-booking fees", desc: "Unlike platforms like Booksy, we don't charge you per booking. Fixed monthly rate, no surprises." },
-        { title: "24/7 direct support", desc: "You talk to the person who built your system, not a call center. Fast responses, fast fixes." },
-        { title: "100% custom", desc: "Your brand, your colors, your business rules. You don't adapt to software — the software adapts to you." }
+        { title: "No per-booking fees",    desc: "Unlike platforms like Booksy, we don't charge you per booking. Fixed monthly rate, no surprises." },
+        { title: "24/7 direct support",    desc: "You talk to the person who built your system, not a call center. Fast responses, fast fixes." },
+        { title: "100% custom",            desc: "Your brand, your colors, your business rules. You don't adapt to software — the software adapts to you." }
       ]
     },
     process: {
       title: "Three steps. <em>No mystery.</em>",
       items: [
-        { title: "Call", desc: "Tell us about your business, your pain points, and what you dream of automating. No commitment, no hard sell." },
-        { title: "Proposal", desc: "We send you a proposal with scope, timeline, and fixed price. No fine print." },
-        { title: "Delivery", desc: "We build, train you, and launch. After that, we stay with you for maintenance and improvements." }
+        { title: "Call",      desc: "Tell us about your business, your pain points, and what you dream of automating. No commitment, no hard sell." },
+        { title: "Proposal",  desc: "We send you a proposal with scope, timeline, and fixed price. No fine print." },
+        { title: "Delivery",  desc: "We build, train you, and launch. After that, we stay with you for maintenance and improvements." }
       ]
     },
     cta: {
@@ -156,13 +189,13 @@ const translations = {
 // Simple i18n manager
 const i18n = {
   currentLang: localStorage.getItem('lang') || 'es',
-  
+
   init() {
     this.currentLang = localStorage.getItem('lang') || 'es';
     this.updateLanguage();
     this.setupButtons();
   },
-  
+
   setupButtons() {
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -171,27 +204,24 @@ const i18n = {
       });
     });
   },
-  
+
   setLanguage(lang) {
     this.currentLang = lang;
     localStorage.setItem('lang', lang);
     this.updateLanguage();
-    
-    // Update button states
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
   },
-  
+
   updateLanguage() {
     const t = translations[this.currentLang];
-    
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const value = this.getNestedValue(t, key);
-      
-      if (value) {
-        // Check if contains HTML
+
+      if (value !== undefined && value !== null) {
         if (typeof value === 'string' && value.includes('<')) {
           el.innerHTML = value;
         } else {
@@ -200,14 +230,13 @@ const i18n = {
       }
     });
   },
-  
+
   getNestedValue(obj, path) {
-    return path.split('.').reduce((current, prop) => 
-      current ? current[prop] : undefined, obj);
+    return path.split('.').reduce((current, prop) =>
+      current != null ? current[prop] : undefined, obj);
   }
 };
 
-// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   i18n.init();
 });

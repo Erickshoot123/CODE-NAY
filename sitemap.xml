@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.codenay.com/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>
+
+<!--
+  Tu sitio es de una sola página, por eso aquí va una sola URL.
+  Las secciones (#services, #work) NO se listan: Google las trata
+  como parte de la misma página.
+
+  Cuando agregues páginas nuevas, duplica el bloque <url> así:
+
+  <url>
+    <loc>https://www.codenay.com/proyectos/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  Actualiza <lastmod> cuando cambies el contenido de verdad.
+-->

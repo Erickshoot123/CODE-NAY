@@ -1,0 +1,265 @@
+/* ============================================
+   Code Nay — Sección "Proyectos"
+   Se carga DESPUÉS de styles.css.
+   Ajusta estas cuatro variables para que combine
+   con tu paleta actual y todo lo demás se acomoda.
+   ============================================ */
+
+:root {
+  --work-border:      rgba(255, 255, 255, 0.10);
+  --work-border-hi:   rgba(255, 255, 255, 0.22);
+  --work-surface:     rgba(255, 255, 255, 0.03);
+  --work-muted:       rgba(255, 255, 255, 0.55);
+  --work-radius:      14px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 54px;
+}
+
+/* ---- Tarjeta de proyecto ---- */
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--work-border);
+  border-radius: var(--work-radius);
+  background: var(--work-surface);
+  overflow: hidden;
+  transition: border-color .25s ease, transform .25s ease;
+}
+
+.work-card:hover {
+  border-color: var(--work-border-hi);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+
+/* Miniatura base */
+.work-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  border-bottom: 1px solid var(--work-border);
+  background-image:
+    repeating-linear-gradient(45deg,
+      rgba(255,255,255,.03) 0px,
+      rgba(255,255,255,.03) 1px,
+      transparent 1px,
+      transparent 9px);
+  overflow: hidden;
+}
+
+/* Accent único por proyecto */
+.work-thumb[data-thumb="01"] {
+  background-color: rgba(212,255,0,0.06);
+  box-shadow: inset 0 0 60px rgba(212,255,0,0.06);
+}
+.work-thumb[data-thumb="01"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(212,255,0,0.12), transparent 65%);
+}
+
+.work-thumb[data-thumb="02"] {
+  background-color: rgba(56,189,248,0.06);
+  box-shadow: inset 0 0 60px rgba(56,189,248,0.06);
+}
+.work-thumb[data-thumb="02"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(56,189,248,0.12), transparent 65%);
+}
+
+.work-thumb[data-thumb="03"] {
+  background-color: rgba(167,139,250,0.06);
+  box-shadow: inset 0 0 60px rgba(167,139,250,0.06);
+}
+.work-thumb[data-thumb="03"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(167,139,250,0.12), transparent 65%);
+}
+
+.work-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-thumb-label {
+  position: relative;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .04em;
+  color: var(--work-muted);
+  border: 1px solid var(--work-border);
+  border-radius: 100px;
+  padding: 5px 11px;
+  backdrop-filter: blur(6px);
+}
+
+.work-body {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.work-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+}
+
+.work-client { color: var(--work-muted); }
+
+.work-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--work-muted);
+}
+
+.work-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.work-status.is-live::before   { background: #4ade80; }
+.work-status.is-building::before { background: #fbbf24; }
+
+.work-body h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.work-body p {
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.6;
+  color: var(--work-muted);
+  max-width: 46ch;
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 6px;
+}
+
+.work-tags span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .64rem;
+  letter-spacing: .03em;
+  color: var(--work-muted);
+  border: 1px solid var(--work-border);
+  border-radius: 100px;
+  padding: 4px 10px;
+}
+
+/* ---- Espacio abierto ---- */
+
+.work-card--open {
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 24px;
+  text-decoration: none;
+  color: inherit;
+  border-style: dashed;
+  background: transparent;
+  min-height: 260px;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.work-card--open:hover {
+  border-color: rgba(212,255,0,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(212,255,0,0.1);
+}
+
+.work-card--open:hover .work-open-mark {
+  border-color: rgba(212,255,0,0.4);
+  color: rgba(212,255,0,0.9);
+}
+
+.work-card--open:hover .work-open-cta {
+  color: rgba(212,255,0,0.9);
+}
+
+.work-open-mark {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--work-muted);
+  border: 1px solid var(--work-border);
+  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+}
+
+.work-card--open h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.work-card--open p {
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.6;
+  color: var(--work-muted);
+  max-width: 40ch;
+}
+
+.work-open-cta {
+  margin-top: auto;
+  padding-top: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .03em;
+}
+
+/* ---- Accesibilidad y móvil ---- */
+
+.work-card--open:focus-visible,
+.work-card a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card { transition: none; }
+  .work-card:hover { transform: none; }
+}
+
+@media (max-width: 640px) {
+  .work-grid { grid-template-columns: 1fr; gap: 18px; }
+  .work-card--open { min-height: 0; }
+}

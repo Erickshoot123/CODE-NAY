@@ -1,0 +1,7 @@
+# Code Nay — robots.txt
+# Le dice a los buscadores qué pueden revisar.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.codenay.com/sitemap.xml
