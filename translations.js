@@ -6,7 +6,7 @@ const translations = {
     hero: {
       meta: "Software · Diseño · Automatización",
       title: "Tu negocio<br>merece dejar de<br><span>operar por</span> <em class=\"strike\">WhatsApp.</em>",
-      subtitle: "Construimos software a medida para barberías, spas, salones de belleza y gimnasios. Reservas online, paneles de admin, TPV y todo lo que tu negocio necesita para crecer sin caos.",
+      subtitle: "Construimos software a medida para todo tipo de negocio: tiendas, restaurantes, servicios, escuelas, clínicas y más. Reservas online, paneles de admin, punto de venta y todo lo que necesitas para crecer sin caos.",
       cta1: "Iniciar proyecto",
       cta2: "Ver lo que hacemos"
     },
@@ -27,15 +27,15 @@ const translations = {
       tag5: "05 · Cómo trabajamos"
     },
     serve: {
-      title: "Negocios de <em>servicio</em> que quieren crecer sin perder el control de sus citas.",
-      subtitle: "Si tu negocio depende de agenda, clientes que reservan y equipos que cobran — esto es para ti.",
+      title: "Para todo tipo de negocio. <em>Sin importar el giro.</em>",
+      subtitle: "Estos son solo ejemplos de lo que podemos construir. Si tu negocio tiene clientes, ventas o procesos que hoy llevas a mano, esto es para ti.",
       cards: [
         { title: "Barberías",          desc: "Reservas por barbero, control de propinas, POS para productos y reportes por empleado." },
         { title: "Spas",               desc: "Agenda de tratamientos, asignación de cabinas, paquetes, bonos regalo y membresías." },
         { title: "Salones y estéticas", desc: "Reservas de múltiples servicios, comisiones por estilista, catálogo de productos e historial de clientes." },
         { title: "Gimnasios",          desc: "Membresías, clases grupales, cobros recurrentes y check-in con QR." },
         { title: "Puntos de venta",    desc: "Tiendas, restaurantes y comercio en mostrador. Cobra, descuenta stock y cierra caja sin hardware caro." },
-        { title: "Tu negocio",         desc: "¿No entras en ninguno? Si hay agenda y clientes, lo construimos. Cuéntanos." },
+        { title: "Tu negocio",         desc: "¿Tu giro no está aquí? Da igual. Si tiene clientes y procesos que hoy llevas a mano, lo construimos. Cuéntanos." },
         { title: "Cafés",              desc: "Landing pages y sitios web para cafés, con menú, reservas y estilo que engancha a tus clientes." },
         { title: "Juegos y comunidades", desc: "Experiencias en Roblox, sistemas de juego, bots de Discord y herramientas para creadores con audiencia." }
       ]
@@ -44,10 +44,10 @@ const translations = {
       title: "No vendemos software enlatado. <em>Construimos a medida.</em>",
       items: [
         { title: "Sistemas de reservas online", desc: "Tu cliente reserva en 10 segundos, sin descargar apps. Confirmación automática por email o WhatsApp." },
-        { title: "Paneles de administración", desc: "Controla citas, servicios, productos e ingresos desde cualquier dispositivo. Reportes claros, no hojas de cálculo infinitas." },
+        { title: "Paneles de administración", desc: "Controla ventas, clientes, productos e ingresos desde cualquier dispositivo. Reportes claros, no hojas de cálculo infinitas." },
         { title: "Paneles para empleados", desc: "Cada empleado ve su agenda, cobra desde su celular y lleva control de sus ganancias. Cero fricción." },
         { title: "Apps móviles tipo nativa", desc: "Tu sistema se ve y funciona como app, sin el dolor de cabeza de la App Store. Se instala desde el navegador." },
-        { title: "Landing pages que venden", desc: "Una página simple que convierte visitantes en citas. Lista para tu Instagram, Google y anuncios." },
+        { title: "Landing pages que venden", desc: "Una página simple que convierte visitantes en clientes. Lista para tu Instagram, Google y anuncios." },
         { title: "Automatizaciones", desc: "Recordatorios, facturación, mensajes de cumpleaños, reactivación de clientes inactivos. Todo en piloto automático." }
       ]
     },
@@ -68,7 +68,7 @@ const translations = {
     why: {
       title: "Hecho para <em>dueños</em>, no para corporativos.",
       items: [
-        { title: "Comisiones por cita",  desc: "A diferencia de plataformas como Booksy, no te cobramos por cada reserva. Tarifa fija mensual, sin sorpresas." },
+        { title: "Cero comisiones",  desc: "A diferencia de las plataformas que cobran por cada venta o reserva, aquí pagas una tarifa fija mensual, sin sorpresas." },
         { title: "Soporte directo",      desc: "Hablas con quien construyó tu sistema, no con un call center. Respuestas rápidas, arreglos rápidos." },
         { title: "A tu medida",          desc: "Tu marca, tus colores, tus reglas de negocio. No te adaptas al software — el software se adapta a ti." }
       ]
@@ -82,7 +82,7 @@ const translations = {
       ]
     },
     cta: {
-      title: "¿Listo para dejar de<br><em>pelearte</em> con tu agenda?",
+      title: "¿Listo para dejar de<br><em>pelearte</em> con tu operación?",
       subtitle: "Escríbenos por Instagram. Te contestamos en menos de 24 horas con ideas concretas para tu negocio.",
       button: "Escríbenos por Instagram"
     },
@@ -99,7 +99,7 @@ const translations = {
     hero: {
       meta: "Software · Design · Automation",
       title: "Your business<br>deserves to stop<br><span>operating on</span> <em class=\"strike\">WhatsApp.</em>",
-      subtitle: "We build custom software for barbershops, spas, beauty salons, and gyms. Online booking, admin panels, POS, and everything your business needs to grow without chaos.",
+      subtitle: "We build custom software for every kind of business: stores, restaurants, services, schools, clinics, and more. Online booking, admin panels, point of sale, and everything you need to grow without chaos.",
       cta1: "Start a project",
       cta2: "See what we do"
     },
@@ -120,15 +120,15 @@ const translations = {
       tag5: "05 · How we work"
     },
     serve: {
-      title: "<em>Service</em> businesses that want to grow without losing control of their appointments.",
-      subtitle: "If your business depends on scheduling, customers booking, and teams getting paid — this is for you.",
+      title: "For every kind of business. <em>Whatever your industry.</em>",
+      subtitle: "These are just examples of what we can build. If your business has customers, sales, or processes you still handle by hand, this is for you.",
       cards: [
         { title: "Barbershops",          desc: "Reservations by barber, tip tracking, POS for products, and employee reports." },
         { title: "Spas",                 desc: "Treatment scheduling, cabin assignment, packages, gift certificates, and memberships." },
         { title: "Salons & aesthetics",  desc: "Multi-service bookings, stylist commissions, product catalog, and customer history." },
         { title: "Gyms",                 desc: "Memberships, group classes, recurring billing, and QR check-in." },
         { title: "Point of sale",        desc: "Stores, restaurants, and counter service. Charge, track stock, and close the till without expensive hardware." },
-        { title: "Your business",        desc: "Don't fit anywhere? If there's scheduling and customers, we'll build it. Tell us." },
+        { title: "Your business",        desc: "Your industry isn't here? No problem. If it has customers and processes you still handle by hand, we'll build it. Tell us." },
         { title: "Coffee shops",         desc: "Landing pages and websites for coffee shops, with menu, booking, and a look that hooks your customers." },
         { title: "Games & communities",  desc: "Roblox experiences, game systems, Discord bots, and tools for creators with an audience." }
       ]
@@ -137,10 +137,10 @@ const translations = {
       title: "We don't sell off-the-shelf software. <em>We build custom.</em>",
       items: [
         { title: "Online booking systems",    desc: "Your customer books in 10 seconds, no app download needed. Automatic confirmation via email or WhatsApp." },
-        { title: "Admin panels",              desc: "Control appointments, services, products, and revenue from any device. Clear reports, not endless spreadsheets." },
+        { title: "Admin panels",              desc: "Control sales, customers, products, and revenue from any device. Clear reports, not endless spreadsheets." },
         { title: "Employee panels",           desc: "Each employee sees their schedule, collects payment from their phone, and tracks their earnings. Zero friction." },
         { title: "Native-like mobile apps",   desc: "Your system looks and works like an app, without the App Store headache. Installs from the browser." },
-        { title: "Landing pages that sell",   desc: "A simple page that turns visitors into bookings. Ready for your Instagram, Google, and ads." },
+        { title: "Landing pages that sell",   desc: "A simple page that turns visitors into customers. Ready for your Instagram, Google, and ads." },
         { title: "Automations",               desc: "Reminders, invoicing, birthday messages, reactivating inactive customers. All on autopilot." }
       ]
     },
@@ -161,7 +161,7 @@ const translations = {
     why: {
       title: "Built for <em>owners</em>, not corporations.",
       items: [
-        { title: "No per-booking fees",    desc: "Unlike platforms like Booksy, we don't charge you per booking. Fixed monthly rate, no surprises." },
+        { title: "No commissions",    desc: "Unlike platforms that charge you per sale or booking, you pay a fixed monthly rate, no surprises." },
         { title: "24/7 direct support",    desc: "You talk to the person who built your system, not a call center. Fast responses, fast fixes." },
         { title: "100% custom",            desc: "Your brand, your colors, your business rules. You don't adapt to software — the software adapts to you." }
       ]
@@ -175,7 +175,7 @@ const translations = {
       ]
     },
     cta: {
-      title: "Ready to stop<br><em>wrestling</em> with your schedule?",
+      title: "Ready to stop<br><em>wrestling</em> with your operations?",
       subtitle: "Message us on Instagram. We'll reply in less than 24 hours with concrete ideas for your business.",
       button: "Message us on Instagram"
     },
