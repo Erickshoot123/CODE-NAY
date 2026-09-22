@@ -24,7 +24,8 @@ const translations = {
       tag2: "02 · Qué construimos",
       tag3: "03 · Proyectos",
       tag4: "04 · Por qué nosotros",
-      tag5: "05 · Cómo trabajamos"
+      tag5: "05 · Cómo trabajamos",
+      tag6: "06 · Preguntas frecuentes"
     },
     serve: {
       title: "Para todo tipo de negocio. <em>Sin importar el giro.</em>",
@@ -71,6 +72,17 @@ const translations = {
         { title: "Cero comisiones",  desc: "A diferencia de las plataformas que cobran por cada venta o reserva, aquí pagas una tarifa fija mensual, sin sorpresas." },
         { title: "Soporte directo",      desc: "Hablas directamente con quien construyó tu sistema. Respuestas rápidas, arreglos rápidos." },
         { title: "A tu medida",          desc: "Tu marca, tus colores, tus reglas de negocio. No te adaptas al software — el software se adapta a ti." }
+      ]
+    },
+    faq: {
+      title: "Antes de <em>escribirnos</em>.",
+      items: [
+        { q: "¿Hacen páginas web y sistemas para negocios en Tepic, Nayarit?", a: "Sí. Somos un estudio de desarrollo con sede en Tepic y trabajamos con negocios de todo Nayarit, además de clientes en el resto de México. Diseñamos páginas web y construimos sistemas a medida: reservas, punto de venta, paneles de administración y automatizaciones." },
+        { q: "¿Puedo dejar de agendar citas por WhatsApp o cuaderno?", a: "Sí, es justo lo que más pedimos. Construimos sistemas de reservas y agenda en línea: tu cliente reserva solo, te llegan recordatorios automáticos y tú ves todo en un panel, sin perseguir mensajes ni anotar en papel." },
+        { q: "¿Tienen sistemas de punto de venta o control de inventario?", a: "Sí. Hacemos puntos de venta para tiendas, restaurantes y comercio en mostrador: cobro, descuento de stock automático y corte de caja, sin depender de hardware caro ni de plataformas que cobran comisión por venta." },
+        { q: "¿Hacen sistemas para spas, clínicas, escuelas o gimnasios?", a: "Sí, y también para negocios que no encajan en ningún molde. Cada sistema se ajusta a cómo trabajas de verdad: agenda de pacientes para clínicas, inscripciones y colegiaturas para escuelas, membresías para gimnasios, y así con cada giro." },
+        { q: "¿Cuánto cuesta un sistema a medida y cobran comisión por venta?", a: "No cobramos comisión por cada reserva o venta, a diferencia de plataformas como Booksy. El precio depende de qué necesita tu negocio: en la llamada inicial te mandamos una propuesta con alcance, tiempo y precio cerrado, sin letra pequeña." },
+        { q: "¿Cuánto tardan en entregar un proyecto?", a: "Varía según el tamaño del sistema, pero trabajamos en tres pasos claros: llamada, propuesta con tiempos definidos, y entrega con entrenamiento incluido. Después seguimos disponibles para mantenimiento y mejoras." }
       ]
     },
     process: {
@@ -128,7 +140,8 @@ const translations = {
       tag2: "02 · What we build",
       tag3: "03 · Projects",
       tag4: "04 · Why us",
-      tag5: "05 · How we work"
+      tag5: "05 · How we work",
+      tag6: "06 · FAQ"
     },
     serve: {
       title: "For every kind of business. <em>Whatever your industry.</em>",
@@ -175,6 +188,17 @@ const translations = {
         { title: "No commissions",    desc: "Unlike platforms that charge you per sale or booking, you pay a fixed monthly rate, no surprises." },
         { title: "24/7 direct support",    desc: "You talk directly to the person who built your system. Fast responses, fast fixes." },
         { title: "100% custom",            desc: "Your brand, your colors, your business rules. You don't adapt to software — the software adapts to you." }
+      ]
+    },
+    faq: {
+      title: "Before you <em>reach out</em>.",
+      items: [
+        { q: "Do you build websites and systems for businesses in Tepic, Nayarit?", a: "Yes. We're a development studio based in Tepic, working with businesses across Nayarit and clients throughout Mexico. We design websites and build custom systems: bookings, point of sale, admin panels, and automations." },
+        { q: "Can I stop booking appointments over WhatsApp or on paper?", a: "Yes, it's what we get asked for the most. We build online booking and scheduling systems: your customer books on their own, you get automatic reminders, and you see everything on a dashboard, no more chasing messages or writing on paper." },
+        { q: "Do you build point-of-sale or inventory systems?", a: "Yes. We build point-of-sale systems for stores, restaurants, and counter service: checkout, automatic stock tracking, and end-of-shift reconciliation, with no expensive hardware and no per-sale commission." },
+        { q: "Do you build systems for spas, clinics, schools, or gyms?", a: "Yes, and for businesses that don't fit any mold too. Every system is built around how you actually work: patient scheduling for clinics, enrollment and tuition billing for schools, memberships for gyms, and so on for each industry." },
+        { q: "How much does a custom system cost, and do you charge commission?", a: "We don't charge commission per booking or sale, unlike platforms like Booksy. Price depends on what your business needs: after the first call we send a proposal with scope, timeline, and a fixed price, no fine print." },
+        { q: "How long does a project take to deliver?", a: "It depends on the size of the system, but we work in three clear steps: a call, a proposal with a defined timeline, and delivery with training included. After that we stay available for maintenance and improvements." }
       ]
     },
     process: {
